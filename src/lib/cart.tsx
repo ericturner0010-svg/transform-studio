@@ -33,9 +33,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
       add: (line) => {
         setLines((prev) => {
           const i = prev.findIndex((l) => l.slug === line.slug && l.size === line.size);
-          if (i > -1) {
+          const existing = prev[i];
+          if (existing) {
             const next = [...prev];
-            next[i] = { ...next[i], qty: next[i].qty + 1 };
+            next[i] = { ...existing, qty: existing.qty + 1 };
             return next;
           }
           return [...prev, { ...line, qty: 1 }];
