@@ -91,8 +91,8 @@ function ProductPage() {
               <TransformSlider
                 before={product.images[0]}
                 after={product.images[1]}
-                beforeLabel={product.tag.split(" ↔ ")[0]}
-                afterLabel={product.tag.split(" ↔ ")[1]}
+                beforeLabel={product.tag.split(" ↔ ")[0] ?? "Form one"}
+                afterLabel={product.tag.split(" ↔ ")[1] ?? "Form two"}
               />
             </div>
           </div>
